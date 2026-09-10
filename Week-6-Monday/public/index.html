@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- PAGE 1: LOGIN PAGE -->
+    <div id="login-page">
+      <h1>🎓 College Student Portal</h1>
+      <p class="subtitle">Please Log In to Access Your Portal</p>
+
+      <div class="card">
+        <h2>User Login</h2>
+        <div class="demo-buttons">
+          <span>Quick Login:</span>
+          <button class="btn btn-sm btn-outline" onclick="quickFill('alex.j@student.college.edu', 'student123')">Student (Alex)</button>
+          <button class="btn btn-sm btn-outline" onclick="quickFill('ali.shaik@cse.college.edu', 'faculty123')">Faculty (Dr. Ali)</button>
+        </div>
+
+        <form id="login-form" onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <label>Email Address:</label>
+            <input type="email" id="login-email" required placeholder="alex.j@student.college.edu" value="alex.j@student.college.edu">
+          </div>
+          <div class="form-group">
+            <label>Password:</label>
+            <input type="password" id="login-password" required placeholder="••••••••" value="student123">
+          </div>
+          <button type="submit" class="btn btn-blue btn-full">Login ➔</button>
+        </form>
+      </div>
+
+      <!-- Optional Register Box -->
+      <div class="card">
+        <h2>New User Registration</h2>
+        <form id="register-form" onsubmit="handleRegister(event)">
+          <div class="form-group">
+            <label>Full Name:</label>
+            <input type="text" id="reg-name" placeholder="Sam Rivera" required>
+          </div>
+          <div class="form-group">
+            <label>Email Address:</label>
+            <input type="email" id="reg-email" placeholder="sam@student.college.edu" required>
+          </div>
+          <div class="form-group">
+            <label>Password:</label>
+            <input type="password" id="reg-password" placeholder="••••••••" required>
+          </div>
+          <div class="form-group">
+            <label>Role:</label>
+            <select id="reg-role">
+              <option value="student">Student</option>
+              <option value="faculty">Faculty</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-green btn-full">Register Account</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- PAGE 2: HOME PAGE (Shown after login) -->
+    <div id="home-page" class="hidden">
+      <div class="nav-header">
+        <h1>🏠 Home Page</h1>
+        <button class="btn btn-red" onclick="handleLogout()">Logout 🚪</button>
+      </div>
+
+      <div class="card welcome-card">
+        <h2>Welcome, <span id="user-name">User</span>! 👋</h2>
+        <p class="role-badge">Role: <strong id="user-role">STUDENT</strong></p>
+      </div>
+
+      <!-- Profile Details Card -->
+      <div class="card">
+        <h2>👤 My Academic Profile</h2>
+        <div class="profile-details">
+          <p><strong>User ID:</strong> <span id="user-id">-</span></p>
+          <p><strong>Email:</strong> <span id="user-email">-</span></p>
+          <p><strong>Department:</strong> <span id="user-dept">-</span></p>
+        </div>
+      </div>
+
+      <!-- Student Records Card -->
+      <div class="card">
+        <h2>📚 Student Information Records</h2>
+        <div id="students-list-container">
+          <button class="btn btn-blue" onclick="loadStudents()">Load Records (GET /students)</button>
+          <div id="students-output" class="output-box"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
