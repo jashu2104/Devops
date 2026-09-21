@@ -8,13 +8,12 @@ Welcome to the **DevOps & Full-Stack Web Development** repository. This project 
 
 | Attribute | Details |
 | :--- | :--- |
-| **School** | School of Computer Science Engineering and Artificial Intelligence |
+|School of Computer Science Engineering and Artificial Intelligence |
 | **Course Name** | **DEVOPS AND FULLSTACK** |
 | **Course Code** | `23CS102PE405` |
 | **Course Type** | Professional Elective |
 | **Program** | B.Tech |
 | **Academic Year & Semester** | 2026–27 (ODD Semester) |
-| **Date** | 21.09.2026 (Monday FN) |
 | **Instructors** | Dr. Mohammed Ali Shaik, Mr. G. Kranthi, Dr. N. Venkatesh, Mrs. Srivani |
 
 ---
