@@ -64,6 +64,22 @@ export const useAttendance = () => {
   }, []);
 
   /**
+   * Add a new student record
+   */
+  const addStudent = useCallback((newStudentData) => {
+    setStudents(prev => {
+      const newId = prev.length > 0 ? Math.max(...prev.map(s => s.id)) + 1 : 1;
+      const createdStudent = {
+        ...newStudentData,
+        id: newId,
+      };
+      showToast(`Student ${createdStudent.name} (${createdStudent.rollNumber}) added successfully`, 'success');
+      addActivity(`New student ${createdStudent.name} registered in ${createdStudent.branch}`, 'system');
+      return [createdStudent, ...prev];
+    });
+  }, [showToast, addActivity]);
+
+  /**
    * Mark individual student attendance (present or absent)
    */
   const markAttendance = useCallback((studentId, newStatus) => {
@@ -132,6 +148,7 @@ export const useAttendance = () => {
     toast,
     summary,
     branchStats,
+    addStudent,
     markAttendance,
     resetAttendance,
     updateSettings,

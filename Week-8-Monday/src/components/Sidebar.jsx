@@ -104,7 +104,7 @@ export const Sidebar = ({
         {/* Faculty Badge */}
         <div className="pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center gap-3 px-2">
           <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold text-xs shrink-0">
-            PS
+            {facultyName.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase()}
           </div>
           <div className="overflow-hidden">
             <p className="text-xs font-semibold text-slate-900 dark:text-slate-100 truncate">

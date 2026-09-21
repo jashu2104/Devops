@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Bell, Sun, Moon, Menu, ChevronDown, User, Shield, LogOut } from 'lucide-react';
+import { Search, Bell, Sun, Moon, Menu, ChevronDown, User, Shield, LogOut, UserPlus } from 'lucide-react';
 
 export const Header = ({
   isDark,
@@ -7,6 +7,8 @@ export const Header = ({
   onOpenMobileSidebar,
   searchQuery,
   setSearchQuery,
+  onOpenAddStudentModal,
+  onLogout,
   facultyName = 'Dr. Priya Sharma',
   facultyRole = 'Faculty'
 }) => {
@@ -37,11 +39,11 @@ export const Header = ({
           </div>
         </div>
 
-        {/* Right Section: Global Search, Theme, Notifications, Profile */}
+        {/* Right Section: Global Search, Add Student, Theme, Notifications, Profile */}
         <div className="flex items-center gap-2 sm:gap-3">
           
           {/* Header Search Field (Desktop) */}
-          <div className="relative hidden md:block w-60 lg:w-72">
+          <div className="relative hidden md:block w-52 lg:w-64">
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
             <input
               type="text"
@@ -51,6 +53,18 @@ export const Header = ({
               className="w-full pl-9 pr-4 py-1.5 text-xs sm:text-sm bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/50 text-slate-900 dark:text-slate-100 placeholder-slate-400 transition-all"
             />
           </div>
+
+          {/* Quick Action: Add Student Button */}
+          {onOpenAddStudentModal && (
+            <button
+              onClick={onOpenAddStudentModal}
+              className="px-3 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-semibold shadow-sm transition-all flex items-center gap-1.5 shrink-0"
+              title="Add New Student"
+            >
+              <UserPlus className="w-4 h-4" />
+              <span className="hidden sm:inline">Add Student</span>
+            </button>
+          )}
 
           {/* Dark/Light Mode Toggle */}
           <button
@@ -108,7 +122,7 @@ export const Header = ({
               className="flex items-center gap-2.5 p-1.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
             >
               <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center text-white font-bold text-xs shadow-md shadow-indigo-500/20">
-                PS
+                {facultyName.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase()}
               </div>
               <div className="text-left hidden sm:block">
                 <p className="text-xs font-semibold text-slate-900 dark:text-slate-100 leading-none">
@@ -136,7 +150,13 @@ export const Header = ({
                     <Shield className="w-3.5 h-3.5 text-slate-400" />
                     Department Access
                   </button>
-                  <button className="w-full flex items-center gap-2 px-3 py-2 text-xs text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-lg transition-colors mt-1">
+                  <button
+                    onClick={() => {
+                      setShowProfileMenu(false);
+                      if (onLogout) onLogout();
+                    }}
+                    className="w-full flex items-center gap-2 px-3 py-2 text-xs text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-lg transition-colors mt-1"
+                  >
                     <LogOut className="w-3.5 h-3.5" />
                     Sign Out
                   </button>
