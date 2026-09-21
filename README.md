@@ -8,7 +8,7 @@ Welcome to the **DevOps & Full-Stack Web Development** repository. This project 
 
 | Attribute | Details |
 | :--- | :--- |
-|School of Computer Science Engineering and Artificial Intelligence |
+| | School of Computer Science Engineering and Artificial Intelligence |
 | **Course Name** | **DEVOPS AND FULLSTACK** |
 | **Course Code** | `23CS102PE405` |
 | **Course Type** | Professional Elective |
