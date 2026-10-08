@@ -34,7 +34,7 @@ Welcome to the **DevOps & Full-Stack Web Development** repository. This project 
 | 📈 [`Week-8-Monday`](file:///Users/jashu/Documents/Devops/Week-8-Monday) | **Student Attendance Management System** | React 18, Context API, Recharts, Modern CSS | High-performance attendance management platform with analytics, KPI metric cards, filters, and faculty registration. |
 | 📚 [`Week-8-Thursday`](file:///Users/jashu/Documents/Devops/Week-8-Thursday) | **Online Bookstore App** | React 18, React Router 6, Context API, Lucide | Multi-page bookstore platform featuring book catalog (500+ books), category filter, search, dynamic cart management, and details page. |
 | 🛒 [`Week-9-Monday`](file:///Users/jashu/Documents/Devops/Week-9-Monday) | **Modern React Shopping Cart App** | React 19, Vite, Lucide React, Oxlint | Interactive shopping cart application built with React 19, dynamic quantity adjustments, discount codes, and checkout UI. |
-| 🎓 [`Week-9-Thursday`](file:///Users/jashu/Documents/Devops/Week-9-Thursday) | **College Student Management Portal** | React 18, React Router DOM 6, Vite | Multi-page student management portal featuring dynamic routing (`useParams`), student & course profiles, active navbar highlighting, lifecycle hooks, and 404 handling. |
+| 🎓 [`Week-9-Thursday`](file:///Users/jashu/Documents/Devops/Week-9-Thursday) | **College Student Management Portal** | React 18, React Router DOM 6, Vite | Multi-page student management portal featuring dynamic routing (`useParams`), student & course profiles, active navbar highlighting, lifecycle hooks (`useEffect`), and 404 handling. |
 
 ---
 
@@ -71,7 +71,7 @@ Ensure you have the following installed on your machine:
 
    *For Frontend React Apps (`Week-5-Thursday`, `Week-6-Thursday`, `Week-7-Thursday`, `Week-8-Monday`, `Week-8-Thursday`, `Week-9-Monday`, `Week-9-Thursday`):*
    ```bash
-   cd Week-9-Thursday/student-management
+   cd Week-9-Thursday
    npm install
    npm run dev
    ```
