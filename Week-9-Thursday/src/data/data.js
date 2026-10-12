@@ -2,11 +2,11 @@
 // Local dataset simulating backend database for Students and Courses
 
 export const students = [
-  { id: 101, name: "Rahul Sharma", branch: "CSE", year: "III", email: "rahul.sharma@college.edu", phone: "9876543210", cgpa: "8.9", section: "A", status: "Active" },
+  { id: 101, name: "Jashwanth Reddy", branch: "CSE", year: "IV", email: "jashwanthreddy@college.edu", phone: "9876543210", cgpa: "8.7", section: "A", status: "Active" },
   { id: 102, name: "Priya Reddy", branch: "CSE", year: "IV", email: "priya.reddy@college.edu", phone: "9876543211", cgpa: "9.2", section: "B", status: "Active" },
-  { id: 103, name: "Arjun Verma", branch: "ECE", year: "III", email: "arjun.verma@college.edu", phone: "9876543212", cgpa: "8.4", section: "A", status: "Active" },
-  { id: 104, name: "Sneha Patel", branch: "AIML", year: "II", email: "sneha.patel@college.edu", phone: "9876543213", cgpa: "9.5", section: "A", status: "Active" },
-  { id: 105, name: "Kiran Kumar", branch: "IT", year: "IV", email: "kiran.kumar@college.edu", phone: "9876543214", cgpa: "7.8", section: "C", status: "Active" },
+  { id: 103, name: "Arjun Reddy", branch: "MECH", year: "IV", email: "arjun.reddy@college.edu", phone: "9876543212", cgpa: "8.4", section: "A", status: "Active" },
+  { id: 104, name: "Sai Krishna Reddy", branch: "AIML", year: "IV", email: "saikrishnareddy@college.edu", phone: "9876543213", cgpa: "8.9", section: "A", status: "Active" },
+  { id: 105, name: "Raju Omkaram", branch: "IT", year: "I", email: "rajuomkaram143@college.edu", phone: "9876543214", cgpa: "9.8", section: "A", status: "Active" },
   { id: 106, name: "Anjali Gupta", branch: "CSE", year: "II", email: "anjali.gupta@college.edu", phone: "9876543215", cgpa: "8.7", section: "B", status: "Active" },
   { id: 107, name: "Vikram Singh", branch: "MECH", year: "IV", email: "vikram.singh@college.edu", phone: "9876543216", cgpa: "8.1", section: "A", status: "Active" },
   { id: 108, name: "Divya Joshi", branch: "ECE", year: "II", email: "divya.joshi@college.edu", phone: "9876543217", cgpa: "9.0", section: "B", status: "Active" },

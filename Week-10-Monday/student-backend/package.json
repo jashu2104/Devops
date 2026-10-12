@@ -1,0 +1,25 @@
+{
+  "name": "student-backend",
+  "version": "1.0.0",
+  "description": "Backend API for College Student Management System (Assignment 10.1.1)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "express",
+    "nodejs",
+    "rest-api",
+    "student-management"
+  ],
+  "author": "23CS102PE405",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

@@ -35,6 +35,7 @@ Welcome to the **DevOps & Full-Stack Web Development** repository. This project 
 | 📚 [`Week-8-Thursday`](file:///Users/jashu/Documents/Devops/Week-8-Thursday) | **Online Bookstore App** | React 18, React Router 6, Context API, Lucide | Multi-page bookstore platform featuring book catalog (500+ books), category filter, search, dynamic cart management, and details page. |
 | 🛒 [`Week-9-Monday`](file:///Users/jashu/Documents/Devops/Week-9-Monday) | **Modern React Shopping Cart App** | React 19, Vite, Lucide React, Oxlint | Interactive shopping cart application built with React 19, dynamic quantity adjustments, discount codes, and checkout UI. |
 | 🎓 [`Week-9-Thursday`](file:///Users/jashu/Documents/Devops/Week-9-Thursday) | **College Student Management Portal** | React 18, React Router DOM 6, Vite | Multi-page student management portal featuring dynamic routing (`useParams`), student & course profiles, active navbar highlighting, lifecycle hooks (`useEffect`), and 404 handling. |
+| 🎓 [`Week-10-Monday`](file:///Users/jashu/Documents/Devops/Week-10-Monday) | **College Student Management API & Suite** | Node.js, Express, REST API, Postman | RESTful student management API supporting full CRUD operations, input validations, error handling, and comprehensive Postman test collection. |
 
 ---
 
@@ -76,9 +77,9 @@ Ensure you have the following installed on your machine:
    npm run dev
    ```
 
-   *For Backend Express Apps (`Week-2-Thursday`, `Week-3-Monday`, `Week-3-Thursday`, `Week-4-Monday`, `Week-5-Monday`, `Week-6-Monday`):*
+   *For Backend Express Apps (`Week-2-Thursday`, `Week-3-Monday`, `Week-3-Thursday`, `Week-4-Monday`, `Week-5-Monday`, `Week-6-Monday`, `Week-10-Monday`):*
    ```bash
-   cd Week-6-Monday
+   cd Week-10-Monday/student-backend
    npm install
    npm run dev   # or npm start
    ```
@@ -102,6 +103,7 @@ Devops/
 ├── Week-8-Thursday/     # Online Bookstore App (React Router + Context API)
 ├── Week-9-Monday/       # Modern Shopping Cart App (React 19 + Vite)
 ├── Week-9-Thursday/     # College Student Management Portal (React Router DOM + Hooks)
+├── Week-10-Monday/      # College Student Management API (Express + In-Memory DB + Postman)
 └── README.md            # Main repository documentation
 ```
 
