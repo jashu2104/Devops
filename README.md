@@ -35,13 +35,13 @@ Welcome to the **DevOps & Full-Stack Web Development** repository. This project 
 | 📚 [`Week-8-Thursday`](file:///Users/jashu/Documents/Devops/Week-8-Thursday) | **Online Bookstore App** | React 18, React Router 6, Context API, Lucide | Multi-page bookstore platform featuring book catalog (500+ books), category filter, search, dynamic cart management, and details page. |
 | 🛒 [`Week-9-Monday`](file:///Users/jashu/Documents/Devops/Week-9-Monday) | **Modern React Shopping Cart App** | React 19, Vite, Lucide React, Oxlint | Interactive shopping cart application built with React 19, dynamic quantity adjustments, discount codes, and checkout UI. |
 | 🎓 [`Week-9-Thursday`](file:///Users/jashu/Documents/Devops/Week-9-Thursday) | **College Student Management Portal** | React 18, React Router DOM 6, Vite | Multi-page student management portal featuring dynamic routing (`useParams`), student & course profiles, active navbar highlighting, lifecycle hooks (`useEffect`), and 404 handling. |
-| 🎓 [`Week-10-Monday`](file:///Users/jashu/Documents/Devops/Week-10-Monday) | **College Student Management API & Suite** | Node.js, Express, REST API, Postman | RESTful student management API supporting full CRUD operations, input validations, error handling, and comprehensive Postman test collection. |
+| 🎓 [`Week-10-Monday`](file:///Users/jashu/Documents/Devops/Week-10-Monday) | **College Student Management Full-Stack App** | React 19, React Router 7, Express, REST API | Decoupled full-stack system with React 19 SPA frontend, Express RESTful API backend, student dashboard, search & branch filters, details view, and Postman collection. |
 
 ---
 
 ## 🛠 Tech Stack & Tools
 
-- **Frontend**: React (v18 & v19), React Router DOM, Vite, Vanilla CSS3, Lucide React Icons, Recharts
+- **Frontend**: React (v18 & v19), React Router DOM (v6 & v7), Vite, Vanilla CSS3, Lucide React Icons, Recharts
 - **Backend & Relational DB**: Node.js, Express.js (v4 & v5), PostgreSQL, Sequelize ORM
 - **NoSQL Database**: MongoDB, Mongoose
 - **Security & Authentication**: JSON Web Tokens (JWT), BcryptJS password hashing, Middleware Guards
@@ -70,14 +70,14 @@ Ensure you have the following installed on your machine:
 2. **Run a specific project module:**
    Navigate into any project folder, install dependencies, and launch:
 
-   *For Frontend React Apps (`Week-5-Thursday`, `Week-6-Thursday`, `Week-7-Thursday`, `Week-8-Monday`, `Week-8-Thursday`, `Week-9-Monday`, `Week-9-Thursday`):*
+   *For Frontend React Apps (`Week-5-Thursday`, `Week-6-Thursday`, `Week-7-Thursday`, `Week-8-Monday`, `Week-8-Thursday`, `Week-9-Monday`, `Week-9-Thursday`, `Week-10-Monday/student-frontend`):*
    ```bash
-   cd Week-9-Thursday
+   cd Week-10-Monday/student-frontend
    npm install
    npm run dev
    ```
 
-   *For Backend Express Apps (`Week-2-Thursday`, `Week-3-Monday`, `Week-3-Thursday`, `Week-4-Monday`, `Week-5-Monday`, `Week-6-Monday`, `Week-10-Monday`):*
+   *For Backend Express Apps (`Week-2-Thursday`, `Week-3-Monday`, `Week-3-Thursday`, `Week-4-Monday`, `Week-5-Monday`, `Week-6-Monday`, `Week-10-Monday/student-backend`):*
    ```bash
    cd Week-10-Monday/student-backend
    npm install
@@ -103,7 +103,9 @@ Devops/
 ├── Week-8-Thursday/     # Online Bookstore App (React Router + Context API)
 ├── Week-9-Monday/       # Modern Shopping Cart App (React 19 + Vite)
 ├── Week-9-Thursday/     # College Student Management Portal (React Router DOM + Hooks)
-├── Week-10-Monday/      # College Student Management API (Express + In-Memory DB + Postman)
+├── Week-10-Monday/      # College Student Management Full-Stack System
+│   ├── student-backend/ # Express REST API Server + Postman Suite
+│   └── student-frontend/# React 19 + React Router 7 Client Application
 └── README.md            # Main repository documentation
 ```
 
