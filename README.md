@@ -36,15 +36,18 @@ Welcome to the **DevOps & Full-Stack Web Development** repository. This project 
 | 🛒 [`Week-9-Monday`](file:///Users/jashu/Documents/Devops/Week-9-Monday) | **Modern React Shopping Cart App** | React 19, Vite, Lucide React, Oxlint | Interactive shopping cart application built with React 19, dynamic quantity adjustments, discount codes, and checkout UI. |
 | 🎓 [`Week-9-Thursday`](file:///Users/jashu/Documents/Devops/Week-9-Thursday) | **College Student Management Portal** | React 18, React Router DOM 6, Vite | Multi-page student management portal featuring dynamic routing (`useParams`), student & course profiles, active navbar highlighting, lifecycle hooks (`useEffect`), and 404 handling. |
 | 🎓 [`Week-10-Monday`](file:///Users/jashu/Documents/Devops/Week-10-Monday) | **College Student Management Full-Stack App** | React 19, React Router 7, Express, REST API | Decoupled full-stack system with React 19 SPA frontend, Express RESTful API backend, student dashboard, search & branch filters, details view, and Postman collection. |
+| 🧪 [`Week-11-Monday`](file:///Users/jashu/Documents/Devops/Week-11-Monday) | **Student Management Integration Testing & CI/CD** | React, Express, PostgreSQL, Jest, Supertest, GitHub Actions | Full-stack integration test suite validating REST APIs with PostgreSQL persistence, request validation, error envelopes, and automated CI pipeline. |
+| 🔬 [`Week-11-Thursday`](file:///Users/jashu/Documents/Devops/Week-11-Thursday) | **Comprehensive Full-Stack Testing & CI/CD Suite** | React 19, Express, PostgreSQL, Jest, Vitest, RTL, GitHub Actions | Complete automated verification pipeline with backend unit & DB integration tests, frontend component tests, failure handling demonstration, and >85% test coverage. |
 
 ---
 
 ## 🛠 Tech Stack & Tools
 
 - **Frontend**: React (v18 & v19), React Router DOM (v6 & v7), Vite, Vanilla CSS3, Lucide React Icons, Recharts
-- **Backend & Relational DB**: Node.js, Express.js (v4 & v5), PostgreSQL, Sequelize ORM
+- **Backend & Relational DB**: Node.js, Express.js (v4 & v5), PostgreSQL, Sequelize ORM, `pg` Pool
 - **NoSQL Database**: MongoDB, Mongoose
 - **Security & Authentication**: JSON Web Tokens (JWT), BcryptJS password hashing, Middleware Guards
+- **Testing & CI/CD**: Jest, Supertest, Vitest, React Testing Library, GitHub Actions Workflows, Istanbul/c8 Coverage
 - **Development & Tooling**: npm, Oxlint, Postman Collections, Git & GitHub CLI
 
 ---
@@ -56,7 +59,7 @@ Welcome to the **DevOps & Full-Stack Web Development** repository. This project 
 Ensure you have the following installed on your machine:
 - **Node.js**: v18.0.0 or higher
 - **npm**: v9.0.0 or higher
-- **PostgreSQL**: Local PostgreSQL server (for Week 3 & 4 relational DB modules)
+- **PostgreSQL**: Local PostgreSQL server (for Week 3, 4, and 11 relational DB modules)
 - **MongoDB**: Local MongoDB server or MongoDB Atlas URI (for Week 5 backend module)
 
 ### Quick Run Instructions
@@ -70,18 +73,35 @@ Ensure you have the following installed on your machine:
 2. **Run a specific project module:**
    Navigate into any project folder, install dependencies, and launch:
 
-   *For Frontend React Apps (`Week-5-Thursday`, `Week-6-Thursday`, `Week-7-Thursday`, `Week-8-Monday`, `Week-8-Thursday`, `Week-9-Monday`, `Week-9-Thursday`, `Week-10-Monday/student-frontend`):*
+   *For Frontend React Apps (`Week-5-Thursday`, `Week-6-Thursday`, `Week-7-Thursday`, `Week-8-Monday`, `Week-8-Thursday`, `Week-9-Monday`, `Week-9-Thursday`, `Week-10-Monday/student-frontend`, `Week-11-Thursday/frontend`):*
    ```bash
-   cd Week-10-Monday/student-frontend
+   cd Week-11-Thursday/frontend
    npm install
    npm run dev
    ```
 
-   *For Backend Express Apps (`Week-2-Thursday`, `Week-3-Monday`, `Week-3-Thursday`, `Week-4-Monday`, `Week-5-Monday`, `Week-6-Monday`, `Week-10-Monday/student-backend`):*
+   *For Backend Express Apps (`Week-2-Thursday`, `Week-3-Monday`, `Week-3-Thursday`, `Week-4-Monday`, `Week-5-Monday`, `Week-6-Monday`, `Week-10-Monday/student-backend`, `Week-11-Thursday/backend`):*
    ```bash
-   cd Week-10-Monday/student-backend
+   cd Week-11-Thursday/backend
    npm install
    npm run dev   # or npm start
+   ```
+
+   *For Automated Test Suites (`Week-11-Monday`, `Week-11-Thursday`):*
+   ```bash
+   # Run backend unit tests
+   cd Week-11-Thursday/backend
+   npm run test:unit
+
+   # Run backend integration tests (requires running PostgreSQL)
+   npm run test:integration
+
+   # Run backend test coverage
+   npm run test:coverage
+
+   # Run frontend component tests
+   cd ../frontend
+   npm test
    ```
 
 ---
@@ -106,6 +126,11 @@ Devops/
 ├── Week-10-Monday/      # College Student Management Full-Stack System
 │   ├── student-backend/ # Express REST API Server + Postman Suite
 │   └── student-frontend/# React 19 + React Router 7 Client Application
+├── Week-11-Monday/      # Student Management Integration Testing & CI/CD Pipeline (Jest + Supertest)
+├── Week-11-Thursday/    # Full-Stack Automated Testing Suite & CI/CD (Jest + Vitest + GitHub Actions)
+│   ├── backend/         # Express REST API, Unit & Integration Tests (PostgreSQL)
+│   ├── frontend/        # React 19 SPA & Vitest Component Tests
+│   └── student-management/# Complete project root with CI/CD Workflow
 └── README.md            # Main repository documentation
 ```
 

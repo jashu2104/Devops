@@ -1,0 +1,133 @@
+name: College Student Management System CI/CD
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-and-build:
+    name: Build, Test & CI Verification
+    runs-on: ubuntu-latest
+
+    # Service container for PostgreSQL test database
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: student_management_test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: password
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      NODE_ENV: test
+      PORT: 5000
+      DATABASE_URL: postgresql://postgres:password@localhost:5432/student_management_test
+      TEST_DATABASE_URL: postgresql://postgres:password@localhost:5432/student_management_test
+
+    steps:
+      # Step 1: Checkout repository
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Step 2: Setup Node.js environment
+      - name: Setup Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: |
+            backend/package-lock.json
+            frontend/package-lock.json
+
+      # Step 3: Install backend dependencies
+      - name: Install Backend Dependencies
+        working-directory: backend
+        run: npm ci
+
+      # Step 4: Install frontend dependencies
+      - name: Install Frontend Dependencies
+        working-directory: frontend
+        run: npm ci
+
+      # Step 5: Run backend unit tests
+      - name: Run Backend Unit Tests
+        working-directory: backend
+        run: npm run test:unit
+
+      # Step 6: Run frontend unit tests
+      - name: Run Frontend Unit Tests
+        working-directory: frontend
+        run: npm test
+
+      # Step 7: Start backend server and verify health check with retry loop
+      - name: Start Backend & Verify Health Check
+        working-directory: backend
+        run: |
+          npm start &
+          BACKEND_PID=$!
+          echo "Backend started with PID: $BACKEND_PID"
+
+          echo "Waiting for backend health check at http://127.0.0.1:5000/api/health..."
+          RETRIES=20
+          HEALTHY=0
+          for i in $(seq 1 $RETRIES); do
+            HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:5000/api/health || true)
+            if [ "$HTTP_STATUS" -eq 200 ]; then
+              echo "Backend is healthy! Received HTTP 200 on attempt $i."
+              HEALTHY=1
+              break
+            fi
+            echo "Attempt $i: Backend not ready yet (HTTP $HTTP_STATUS). Retrying in 1s..."
+            sleep 1
+          done
+
+          if [ "$HEALTHY" -ne 1 ]; then
+            echo "Health check failed after $RETRIES attempts."
+            kill -9 $BACKEND_PID || true
+            exit 1
+          fi
+
+          # Terminate smoke test background process cleanly
+          kill $BACKEND_PID || true
+
+      # Step 8: Run backend integration tests with Supertest against PostgreSQL
+      - name: Run Integration Tests
+        working-directory: backend
+        run: npm run test:integration
+
+      # Step 9: Build frontend production bundle
+      - name: Build Frontend
+        working-directory: frontend
+        run: npm run build
+
+      # Step 10: Generate backend test coverage reports
+      - name: Generate Backend Coverage
+        working-directory: backend
+        run: npm run test:coverage
+
+      # Step 11: Upload test coverage artifacts
+      - name: Upload Test Coverage Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: backend-test-coverage
+          path: backend/coverage/
+          retention-days: 14
+
+      # Step 12: Upload frontend production build artifact
+      - name: Upload Frontend Production Build
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: frontend-production-build
+          path: frontend/dist/
+          retention-days: 14
